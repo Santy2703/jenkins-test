@@ -1,5 +1,8 @@
 pipeline {
    agent any
+   parameters {
+     string(name:'BRANCH_NAME',defaultValue:'master')
+   }
    stages {
     stage('Checkout') {
       steps {
