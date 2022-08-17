@@ -11,6 +11,7 @@ pipeline {
            // url: 'https://github.com/Santy2703/jenkins-test'
            // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
            sh "ls" 
+           sh "git checkout params.BRANCH_NAME"
           }
        }
     }
