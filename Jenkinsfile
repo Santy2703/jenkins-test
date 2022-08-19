@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        git branch: "${params.BRANCH}", url: 'https://github.com/Santy2703/jenkins-test'
+        git branch: "${params.BRANCH}"
       }
     }
   }
