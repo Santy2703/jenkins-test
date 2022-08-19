@@ -12,6 +12,7 @@ stages {
 				cleanWs()
                 checkout scm
                 sh "ls"
+		sh "git branch"
 			}
 		}
 }
