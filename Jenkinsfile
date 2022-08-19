@@ -1,14 +1,13 @@
 pipeline {
-   agent any
-   parameters {
-     string(name:'BRANCH_NAME',defaultValue:'master')
-   }
-stages {
-	stage ('Checkout Xyz') {
- 
-		steps {
-			git branch: 'params.BRANCH_NAME', url: 'https://github.com/Santy2703/jenkins-test'	
-		}
-	}
-   }
+  agent any
+  parameters {
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
+  }
+  stages {
+    stage('checkout') {
+      steps {
+        git branch: "${params.BRANCH}", url: 'https://github.com/Santy2703/jenkins-test'
+      }
+    }
+  }
 }
