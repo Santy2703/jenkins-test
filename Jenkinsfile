@@ -4,18 +4,11 @@ pipeline {
      string(name:'BRANCH_NAME',defaultValue:'master')
    }
 stages {
-		stage ('Checkout Xyz') {
-            when {
-		    expression { 
-                         BRANCH_NAME ==  ${params.BRANCH_NAME}
-		    }
-            }
-			steps {
-				cleanWs()
-                checkout scm
-                sh "ls"
-		sh "git branch"
-			}
+	stage ('Checkout Xyz') {
+ 
+		steps {
+			git branch: 'params.BRANCH_NAME', url: 'https://github.com/Santy2703/jenkins-test'	
 		}
-}
+	}
+   }
 }
