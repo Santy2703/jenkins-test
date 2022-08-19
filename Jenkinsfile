@@ -1,14 +1,17 @@
 pipeline {
-   agent any
-   parameters {
-     string(name:'BRANCH_NAME',defaultValue:'master')
-   }
+  agent any
+  parameters {
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
+  }
 stages {
-	stage ('Checkout Xyz') {
- 
-		steps {
-			git branch: 'params.BRANCH_NAME', url: 'https://github.com/Santy2703/jenkins-test'	
+		stage ('Checkout SCM') {
+            when {
+                expression { BRANCH_NAME == params.BRANCH }
+            }
+			steps {
+				cleanWs()
+                checkout scm
+			}
 		}
-	}
-   }
+}
 }
