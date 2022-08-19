@@ -4,7 +4,7 @@ pipeline {
      string(name:'BRANCH_NAME',defaultValue:'master')
    }
 stages {
-		stage ('Checkout SCM') {
+		stage ('Checkout Xyz') {
             when {
 		    expression { 
                          BRANCH_NAME ==  ${params.BRANCH_NAME}
