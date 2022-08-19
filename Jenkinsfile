@@ -6,7 +6,9 @@ pipeline {
 stages {
 		stage ('Checkout SCM') {
             when {
-                expression { BRANCH_NAME ==  params.BRANCH_NAME}
+		    expression { 
+                         BRANCH_NAME ==  ${params.BRANCH_NAME}
+		    }
             }
 			steps {
 				cleanWs()
