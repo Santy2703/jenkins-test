@@ -23,7 +23,7 @@ pipeline {
 
 				 	],                                                                                                                                                                  
 					
-                                        fileEncoding: 'UTF-8', filePath: "${WORKSPACE}/kubernetes/deployment.yml")])
+                                        fileEncoding: 'UTF-8', filePath: "${WORKSPACE}/deployment.yml")])
 				}
 			}
 		}
