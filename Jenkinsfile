@@ -19,7 +19,7 @@ pipeline {
 				script {
 				contentReplace(configs: [fileContentReplaceConfig(configs: [
 						fileContentReplaceItemConfig(matchCount: 0, replace: params.ENVIRONMENT, search: '@ENVIRONMENT')
-						fileContentReplaceItemConfig(matchCount: 0, replace: env.cpu-(env.ENVIRONMENT)-limts , search: '@LIMITS_CPU'),
+						fileContentReplaceItemConfig(matchCount: 0, replace: env.cpu_(env.ENVIRONMENT)_limits , search: '@LIMITS_CPU'),
 
 				 	],                                                                                                                                                                  
 					
