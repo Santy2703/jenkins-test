@@ -5,7 +5,7 @@ pipeline {
 		string(name: 'DOCKER_TAG', defaultValue: 'LATEST', description: 'Docker image tag to be deployed. "LATEST" deploys the newest image.' )
 	}
 	stages {
-		stage {
+		stage('Checkout SCM') {
 			steps {
 				script {
 				 env.ENV = params.ENVIRONMENT
@@ -15,7 +15,7 @@ pipeline {
 				}
 			}
 		}
-		stage {
+		stage('Checkout SCM 2') {
 			steps {
 				script {
 				contentReplace(configs: [fileContentReplaceConfig(configs: [
