@@ -3,6 +3,7 @@ pipeline {
 	parameters {
 	    choice(choices: ['dev', 'qa', 'prod'], description: 'Environment', name: 'ENVIRONMENT')
 		string(name: 'DOCKER_TAG', defaultValue: 'LATEST', description: 'Docker image tag to be deployed. "LATEST" deploys the newest image.' )
+	}
 	stages {
 		stage {
 			steps {
