@@ -7,7 +7,7 @@ plugins {
 }
 repositories {
     mavenCentral()
-    maven {
+    maven-test {
         url "https://artifactory.dfff.com/artifactory/sherwin-release-local"
         credentials {
             username '***REMOVED***'
